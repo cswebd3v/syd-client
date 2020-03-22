@@ -1,0 +1,19 @@
+.describepage {
+    height: 100vh;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
+.describewrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.describecontainer {
+    height: 60vh;
+    width: 100%;
+    background-color: white;
+}

@@ -1,0 +1,19 @@
+.namepage {
+    height: 100vh;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
+.namewrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.namecontainer {
+    height: 60vh;
+    width: 100%;
+    background-color: white;
+}

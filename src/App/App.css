@@ -1,0 +1,43 @@
+
+.app {
+  text-align: center;
+  min-height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: lightgray;
+  width: inherit;
+  position: fixed;
+}
+
+.navdark {
+  background-color: darkgray;
+}
+
+.navdiv {
+  min-height: 40px;
+  width: 25%;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0;
+}
+
+.navbutton {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+.navwrapper {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
