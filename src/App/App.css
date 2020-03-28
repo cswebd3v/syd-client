@@ -41,3 +41,14 @@
   margin: 0 auto;
 }
 
+.lgframe {
+  background-color: white;
+  height: 250px;
+  width: 330px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+

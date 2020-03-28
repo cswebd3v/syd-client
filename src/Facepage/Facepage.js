@@ -1,7 +1,6 @@
 import React from 'react';
 import './Facepage.css';
 import Smframe from '../Smframe/Smframe.js';
-import Dpanel from '../Dpanel/Dpanel.js';
 
 class Facepage extends React.Component {
     componendDidMount() {
@@ -13,11 +12,15 @@ class Facepage extends React.Component {
                 <div className="facewrapper">
                     <div className="facecontainer">
                         
-                        
-                            
-                        <Dpanel changeStepNext={this.props.changeStepNext}/>
-                        
-
+                        <div className="dpanel">
+                            <div className="card">
+                                <div className="lgframe"></div>
+                                <button>Random Face</button>
+                            </div>
+                            <div className="buttonPanel">
+                                <a href="#describepage"><button onClick={this.props.changeStepNext}>Next</button></a>     
+                            </div>
+                        </div>
 
                         <div className="chooseface">
                             <div className="flexdrops">

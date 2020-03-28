@@ -1,6 +1,6 @@
 import React from 'react';
 import './Namepage.css';
-import Dpanel from '../Dpanel/Dpanel.js';
+
 
 class Namepage extends React.Component {
     constructor(props) {
@@ -34,13 +34,24 @@ class Namepage extends React.Component {
     }
 
     render() {
-        console.log(this.state.info.name, this.state.info.surname);
+        console.log(this.props.occupation)
         return (
             <div className="namepage" id="namepage">
                 <div className="namewrapper">
                     <div className="namecontainer">
 
-                        <Dpanel />
+                        <div className="dpanel">
+                                <div className="card">
+                                    <div className="lgframe"></div>
+                                    <h3>{this.state.name}</h3>
+                                    <h3>{this.props.occupation}</h3>
+                                    <h3>Age {this.props.age}</h3>
+                                </div>
+                                <div className="buttonPanel">
+                                    <a href="#describepage"><button onClick={this.props.changeStepPrev}>Previous</button></a> 
+                                    <a href="#export"><button onClick={this.props.changeStepNext}>Next</button></a>   
+                                </div>
+                        </div>
 
                         <h1>Name your Darling</h1>
                         <div className="name-form">
@@ -52,8 +63,6 @@ class Namepage extends React.Component {
                             <button onClick={this.getName}>Generate Random Name</button>
                             <h3>Your Darling's name is: {this.state.name}</h3>
                         </div>
-                        <a href="#describepage"><button onClick={this.props.changeStepPrev}>Previous</button></a> 
-                        <a href="#export"><button onClick={this.props.changeStepNext}>Next</button></a> 
                     </div>
                 </div>
             </div>

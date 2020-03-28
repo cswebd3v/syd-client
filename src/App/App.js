@@ -4,20 +4,36 @@ import Facepage from '../Facepage/Facepage.js';
 import Describepage from '../Describepage/Describepage.js';
 import Namepage from '../Namepage/Namepage.js';
 import Export from '../Export/Export.js';
+import {API_ENDPOINT} from '../config.js';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentStep: 1
+      currentStep: 1,
+      a1: ' ',
+      a2: ' ',
+      a3: ' ',
+      a4: ' ',
+      a5: ' ',
+      a6: ' ',
+      mainFace: ' ',
+      faces: [],
+      fetchURL: API_ENDPOINT
     };
     this.changeStepNext = this.changeStepNext.bind(this);
     this.changeStepPrev = this.changeStepPrev.bind(this);
+    this.getA1 = this.getA1.bind(this);
+    this.getA2 = this.getA2.bind(this);
+    this.getA3 = this.getA3.bind(this);
+    this.getA4 = this.getA4.bind(this);
+    this.getA5 = this.getA5.bind(this);
+    this.getA6 = this.getA6.bind(this);
   }
 
   componentDidMount() {
-    console.log(this.state.currentStep);
+    
   }
 
   changeStepNext() {
@@ -33,8 +49,40 @@ class App extends React.Component {
 
   }
 
+  getA1(event) {
+    this.setState({
+      a1: event.target.value
+    })
+  }
+  getA2(event) {
+    this.setState({
+      a2: event.target.value
+    })
+  }
+  getA3(event) {
+    this.setState({
+      a3: event.target.value
+    })
+  }
+  getA4(event) {
+    this.setState({
+      a4: event.target.value
+    })
+  }
+  getA5(event) {
+    this.setState({
+      a5: event.target.value
+    })
+  }
+  getA6(event) {
+    this.setState({
+      a6: event.target.value
+    })
+  }
+
   render() {
     console.log('current step: ', this.state.currentStep);
+    console.log(this.state.a1, this.state.a2, this.state.a3, this.state.a4, this.state.a5, this.state.a6);
     let wrapper;
     if (this.state.currentStep === 1) {
       wrapper = (
@@ -119,8 +167,8 @@ class App extends React.Component {
         {wrapper}
 
         <Facepage changeStepNext={this.changeStepNext} />
-        <Describepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} />
-        <Namepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} />
+        <Describepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} getA1={this.getA1} getA2={this.getA2} getA3={this.getA3} getA4={this.getA4} getA5={this.getA5} getA6={this.getA6} />
+        <Namepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} occupation={this.state.a2} age={this.state.a3}/>
         <Export changeStepPrev={this.changeStepPrev} />
       </div>
     );
