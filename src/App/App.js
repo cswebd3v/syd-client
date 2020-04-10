@@ -18,22 +18,49 @@ class App extends React.Component {
       a4: ' ',
       a5: ' ',
       a6: ' ',
-      mainFace: ' ',
+      name: ' ',
+      mainFace: Math.floor(Math.random() * 100),
       faces: [],
-      fetchURL: API_ENDPOINT
+      fetchURL: API_ENDPOINT,
+      info: [],
+      nameURL: 'https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole',
+      bg: 'background1',
+      selectedGender: 'all',
+      selectedAge: 'all'
     };
     this.changeStepNext = this.changeStepNext.bind(this);
     this.changeStepPrev = this.changeStepPrev.bind(this);
+    this.changeBg = this.changeBg.bind(this);
+    this.changeMainFace = this.changeMainFace.bind(this);
+    this.randomFace = this.randomFace.bind(this);
+    this.filterFaces = this.filterFaces.bind(this);
+    this.handleGender = this.handleGender.bind(this);
+    this.handleAge = this.handleAge.bind(this);
+    this.getName = this.getName.bind(this);
+    this.setName = this.setName.bind(this);
     this.getA1 = this.getA1.bind(this);
     this.getA2 = this.getA2.bind(this);
     this.getA3 = this.getA3.bind(this);
     this.getA4 = this.getA4.bind(this);
     this.getA5 = this.getA5.bind(this);
     this.getA6 = this.getA6.bind(this);
+    this.setFaces = this.setFaces.bind(this);
   }
 
   componentDidMount() {
-    
+    fetch(`${this.state.fetchURL}api/faces`)
+      .then(res => res.json())
+      .then(res => this.setState({
+        faces: res
+      }))
+  }
+
+  changeBg(e) {
+    e.preventDefault();
+    this.setState({
+      bg: e.currentTarget.getAttribute('id')
+    })
+    console.log(this.state.bg)
   }
 
   changeStepNext() {
@@ -47,6 +74,70 @@ class App extends React.Component {
       return {currentStep: prevState.currentStep - 1}
     });
 
+  }
+
+  changeMainFace(e) {
+    this.setState({
+      mainFace: e.currentTarget.getAttribute('id')
+    })
+    console.log(this.state.mainFace);
+  }
+
+  randomFace() {
+    this.setState({
+      mainFace: Math.floor(Math.random() * 100)
+    })
+  }
+
+  filterFaces() {
+    if (this.state.selectedGender === 'all' && this.state.selectedAge === 'all') {
+      this.setFaces(`${this.state.fetchURL}api/faces`)
+    } else if (this.state.selectedGender === 'all') {
+      this.setFaces(`${this.state.fetchURL}api/faces/ages/${this.state.selectedAge}`)
+    } else if (this.state.selectedAge === 'all') {
+      this.setFaces(`${this.state.fetchURL}api/faces/genders/${this.state.selectedGender}`)
+    } else {
+      this.setFaces(`${this.state.fetchURL}api/both/${this.state.selectedGender}/${this.state.selectedAge}`)
+    }
+}
+
+  setFaces(url) {
+    fetch(url)
+        .then(res => res.json())
+        .then(res => this.setState({
+            faces: res
+        }))
+  }
+
+  handleGender(e) {
+    this.setState({
+        selectedGender: e.target.value
+    })
+  }
+
+  handleAge(e) {
+    this.setState({
+      selectedAge: e.target.value
+    })
+  }
+
+  getName() {
+    fetch(this.state.nameURL)
+        .then(res => res.json())
+        .then(res => this.setState({
+            info: res
+        }))
+        .then(() => this.setState({
+            name: `${this.state.info[1].first} ${this.state.info[1].last}`
+        }))
+}
+
+  setName(event) {
+    event.preventDefault();
+    this.setState({
+        name: event.currentTarget.childNodes[0].value
+    });
+    console.log(event.currentTarget);
   }
 
   getA1(event) {
@@ -82,7 +173,8 @@ class App extends React.Component {
 
   render() {
     console.log('current step: ', this.state.currentStep);
-    console.log(this.state.a1, this.state.a2, this.state.a3, this.state.a4, this.state.a5, this.state.a6);
+    console.log(this.state.selectedGender, this.state.selectedAge)
+    console.log(this.state.faces.length);
     let wrapper;
     if (this.state.currentStep === 1) {
       wrapper = (
@@ -163,13 +255,21 @@ class App extends React.Component {
     }
 
     return (
-      <div className="app">
+      <div className={`app ${this.state.bg}`}>
+        <div id="bgchange">
+          <p>Choose your Muse</p>
+          <div className="bgchoice bgc1"><button href="#" id="background1" onClick={this.changeBg}>Orchard</button></div>
+          <div className="bgchoice bgc2"><button href="#" id="background2" onClick={this.changeBg}>Forest</button></div>
+          <div className="bgchoice bgc3"><button href="#" id="background3" onClick={this.changeBg}>Mountains</button></div>
+          <div className="bgchoice bgc4"><button href="#" id="background4" onClick={this.changeBg}>Night Sky</button></div>
+          <div className="bgchoice bgc5"><button href="#" id="background5" onClick={this.changeBg}>City</button></div>
+        </div>
         {wrapper}
 
-        <Facepage changeStepNext={this.changeStepNext} />
-        <Describepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} getA1={this.getA1} getA2={this.getA2} getA3={this.getA3} getA4={this.getA4} getA5={this.getA5} getA6={this.getA6} />
-        <Namepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} occupation={this.state.a2} age={this.state.a3}/>
-        <Export changeStepPrev={this.changeStepPrev} />
+        <Facepage changeStepNext={this.changeStepNext} faces={this.state.faces} mainFace={this.state.mainFace} changeMainFace={this.changeMainFace} randomFace={this.randomFace} filterFaces={this.filterFaces} handleGender={this.handleGender} handleAge={this.handleAge} faceLength={this.state.faces.length} />
+        <Describepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} getA1={this.getA1} getA2={this.getA2} getA3={this.getA3} getA4={this.getA4} getA5={this.getA5} getA6={this.getA6} mainFace={this.state.mainFace} />
+        <Namepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} occupation={this.state.a2} age={this.state.a3} mainFace={this.state.mainFace} getName={this.getName} name={this.state.name} setName={this.setName} />
+        <Export changeStepPrev={this.changeStepPrev} mainFace={this.state.mainFace} name={this.state.name} occupation={this.state.a2}  a1={this.state.a1} a2={this.state.a2} a3={this.state.a3} a4={this.state.a4} a5={this.state.a5} a6={this.state.a6}/>
       </div>
     );
   }

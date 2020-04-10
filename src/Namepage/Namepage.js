@@ -1,5 +1,6 @@
 import React from 'react';
 import './Namepage.css';
+const images = require.context('../images/faces', true);
 
 
 class Namepage extends React.Component {
@@ -7,31 +8,12 @@ class Namepage extends React.Component {
         super(props);
         this.state = {
             name: ' ',
-            url: 'https://uinames.com/api/',
+            url: 'https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole',
             info: [],
         }
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.getName = this.getName.bind(this);
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        this.setState({
-            name: event.currentTarget.childNodes[0].value
-        });
-        console.log(event.currentTarget);
-    }
 
-    getName() {
-        fetch(this.state.url)
-            .then(res => res.json())
-            .then(res => this.setState({
-                info: res
-            }))
-            .then(() => this.setState({
-                name: `${this.state.info.name} ${this.state.info.surname}`
-            }))
-    }
 
     render() {
         console.log(this.props.occupation)
@@ -42,26 +24,30 @@ class Namepage extends React.Component {
 
                         <div className="dpanel">
                                 <div className="card">
-                                    <div className="lgframe"></div>
-                                    <h3>{this.state.name}</h3>
+                                    <div className="lgframe">
+                                         <img src={images(`./${this.props.mainFace}.png`)} alt="large face" />
+                                    </div>
+                                    <h3>{this.props.name}</h3>
                                     <h3>{this.props.occupation}</h3>
                                     <h3>Age {this.props.age}</h3>
                                 </div>
                                 <div className="buttonPanel">
-                                    <a href="#describepage"><button onClick={this.props.changeStepPrev}>Previous</button></a> 
-                                    <a href="#export"><button onClick={this.props.changeStepNext}>Next</button></a>   
+                                    <a href="#describepage"><button className="prev" onClick={this.props.changeStepPrev}>Previous</button></a> 
+                                    <a href="#export"><button className="next" onClick={this.props.changeStepNext}>Next</button></a>   
                                 </div>
                         </div>
 
-                        <h1>Name your Darling</h1>
-                        <div className="name-form">
-                            <form onSubmit={this.handleSubmit}>
-                                <input placeholder="Firstname Lastname" type="text" name="fullname" id="fullname" />
-                                <button type="submit">Confirm</button>
-                            </form>
-                            <h3>OR</h3>
-                            <button onClick={this.getName}>Generate Random Name</button>
-                            <h3>Your Darling's name is: {this.state.name}</h3>
+                        <div className="nameMain">
+                            <h1>Name your Darling</h1>
+                            <div className="name-form">
+                                <form onSubmit={this.props.setName}>
+                                    <input placeholder="Firstname Lastname" type="text" name="fullname" id="fullname" />
+                                    <button type="submit">Confirm</button>
+                                </form>
+                                <h3>OR</h3>
+                                <button onClick={this.props.getName}>Generate Random Name</button>
+                                <h3>Your Darling's name is: {this.props.name}</h3>
+                            </div>
                         </div>
                     </div>
                 </div>

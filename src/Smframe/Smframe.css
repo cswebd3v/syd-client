@@ -1,6 +1,9 @@
 .smframe {
-    background-color: white;
-    height: 10%;
-    width: 7%;
-    border: 1px solid black;
+    height: 64px;
+    width: 64px;
+}
+
+.smframe > img {
+    height: 64px;
+    width: 64px;
 }

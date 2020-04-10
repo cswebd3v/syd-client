@@ -2,6 +2,7 @@
 .app {
   text-align: center;
   min-height: 100%;
+  font-family: 'Courgette', cursive;
 }
 
 ::-webkit-scrollbar {
@@ -12,13 +13,17 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  background-color: lightgray;
+  background-image: url('../images/cardbg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   width: inherit;
   position: fixed;
 }
 
 .navdark {
-  background-color: darkgray;
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../images/cardbg.jpg');
 }
 
 .navdiv {
@@ -41,14 +46,88 @@
   margin: 0 auto;
 }
 
-.lgframe {
-  background-color: white;
+#bgchange {
+  position: fixed;
+  top: 40px;
+  left: 40px;
   height: 250px;
-  width: 330px;
+  width: 125px;
+  background-image: url('../images/cardbg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.bgchoice > a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+#bgchange > p {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.bgchoice {
+  width: 100%;
+  margin: 2px;
+}
+
+
+
+
+
+
+.lgframe {
+  height: 250px;
+  width: 250px;
   display: block;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 2px solid black;
+  border-radius: 10px;
 }
 
+.lgframe > img {
+  height: inherit;
+  width: inherit;
+  border-radius: 10px;
+}
+
+img {
+  border:1px solid black;
+}
+
+.next {
+  float: right;
+}
+
+.prev {
+  float: left;
+}
+
+button {
+  color: #494949 !important;
+  text-transform: uppercase;
+  padding: 5px;
+  border: 1px solid #494949 !important;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  color: #494949 !important;
+  border-radius: 50px;
+  border-color: #494949 !important;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
