@@ -28,7 +28,7 @@ class Describepage extends React.Component {
                                      <img src={images(`./${this.props.mainFace}.png`)} alt="large face"/>
                                 </div>
                             </div>
-                            <div className="buttonPanel">
+                            <div className="buttonPanel hiddenmobile">
                                 <a href="#facepage"><button className="prev" onClick={this.props.changeStepPrev}>Previous</button></a> 
                                 <a href="#namepage" onClick={this.props.changeStepNext}><button className="next">Next</button></a>     
                             </div>
@@ -70,6 +70,10 @@ class Describepage extends React.Component {
                                     </div><br></br>
                                     
                                 </form>
+                            </div>
+                            <div className="buttonPanel hiddenmain">
+                                <a href="#facepage"><button className="prev" onClick={this.props.changeStepPrev}>Previous</button></a> 
+                                <a href="#namepage" onClick={this.props.changeStepNext}><button className="next">Next</button></a>     
                             </div>
                         </div>
 

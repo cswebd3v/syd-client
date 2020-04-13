@@ -81,6 +81,10 @@
   margin: 2px;
 }
 
+#bgchange > div > button {
+  width: 100px;
+}
+
 
 
 
@@ -122,6 +126,7 @@ button {
   border-radius: 6px;
   display: inline-block;
   transition: all 0.3s ease 0s;
+  outline: none;
 }
 
 button:hover {
@@ -131,3 +136,81 @@ button:hover {
   transition: all 0.3s ease 0s;
   cursor: pointer;
 }
+
+h1 {
+  margin-bottom: 0;
+}
+/*screen sizes*/
+
+/*iphone 5*/
+@media screen and (min-width: 319px) and (max-width: 321px) {
+  #bgchange {
+    display: none;
+  }
+  .navwrapper {
+    display: none;
+  }
+}
+
+/*iphone 6/7/8*/
+@media screen and (min-width: 374px) and (max-width: 376px) {
+  #bgchange {
+    display: none;
+  }
+  .navwrapper {
+    display: none;
+  }
+} 
+
+/*iphone 6/7/8 Plus*/
+@media screen and (min-width: 413px) and (max-width: 415px) {
+  #bgchange {
+    display: none;
+  }
+  .navwrapper {
+    display: none;
+  }
+} 
+
+/*iphone X*/
+@media screen and (min-width: 374px) and (max-width: 376px) {
+  #bgchange {
+    display: none;
+  }
+  .navwrapper {
+    display: none;
+  }
+} 
+
+/*iPad*/
+@media screen and (min-width: 767px) and (max-width: 769px) {
+  #bgchange {
+    top: 10px;
+    left: 10px;
+    height: 175px;
+  }
+  #bgchange > p {
+    display: none;
+  }
+} 
+
+/*iPad Pro*/
+@media screen and (min-width: 1023px) and (max-width: 1025px) {
+  #bgchange {
+    top: 10px;
+    left: 30px;
+    height: 250px;
+  }
+} 
+
+/*standard laptop*/
+@media screen and (min-width: 1279px) and (max-width: 1281px) {
+
+} 
+
+/*large monitor*/
+@media screen and (min-width: 2400px){
+  .navwrapper {
+    width: 40%;
+  }
+} 

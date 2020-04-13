@@ -109,15 +109,15 @@ class Facepage extends React.Component {
                 <div className="facewrapper">
                     <div className="facecontainer">
                         
-                        <div className="dpanel">
+                        <div className="dpanel facepanel">
                             <div className="card">
                                 <div className="lgframe">
                                     <img src={images(`./${this.props.mainFace}.png`)} alt="large face" />
                                 </div>
-                                <button onClick={this.props.randomFace}>Random Face</button>
+                                <button onClick={this.props.randomFace} id="randomButton">Random Face</button>
                             </div>
                             <div className="buttonPanel">
-                                <a href="#describepage"><button className="next" onClick={this.props.changeStepNext}>Next</button></a>     
+                                <a href="#describepage"><button className="next hiddenmobile" onClick={this.props.changeStepNext}>Next Step</button></a>     
                             </div>
                         </div>
 
@@ -152,10 +152,14 @@ class Facepage extends React.Component {
                                         <Smframe changeMainFace={this.props.changeMainFace} faceid={face.id} />
                                     </span>
                                 ))}
-
+                                
+                                <div>
+                                    <a href="#describepage"><button className="next hiddenmain" id="facenext" onClick={this.props.changeStepNext}>Next Step</button></a>  
+                                </div>
                             </div>
                             
-                            <p>page: {this.state.page + 1}</p>
+                            
+                            
 
                         </div>
                         

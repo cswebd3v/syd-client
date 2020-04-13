@@ -57,3 +57,115 @@
 .a {
     font-weight: 700;
 }
+
+/*screen sizes*/
+
+/*iphone 5*/
+@media screen and (min-width: 319px) and (max-width: 321px) {
+    .export {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+    .exportcontainer {
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+
+/*iphone 6/7/8*/
+@media screen and (min-width: 374px) and (max-width: 376px) {
+    .export {
+        width: 100%;
+    }
+    .exportcontainer {
+        height: 100vh;
+        border-radius: 0;
+    }
+    .cardLast {
+        height: 88%;
+    }
+    .saveButton {
+        width: 100%;
+    }
+} 
+
+/*iphone 6/7/8 Plus*/
+@media screen and (min-width: 413px) and (max-width: 415px) {
+    .export {
+        width: 100%;
+    }
+    .exportcontainer {
+        height: 100vh;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .cardLast {
+        height: 93%;
+    }
+} 
+
+/*iphone X*/
+@media screen and (min-width: 374px) and (max-width: 376px) {
+    .export {
+        width: 100%;
+    }
+    .exportcontainer {
+        height: 100vh;
+        border-radius: 0;
+    }
+} 
+
+/*iPad*/
+@media screen and (min-width: 767px) and (max-width: 769px) {
+    .export {
+        width: 95%;
+    }
+    .exportcontainer {
+        height: 60vh;
+    }
+    .lgframe {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+/*iPad Pro*/
+@media screen and (min-width: 1023px) and (max-width: 1025px) {
+    .export {
+      width: 85%;
+    }
+    .exportcontainer {
+        height: 45vh;
+    }
+  } 
+
+/*standard laptop*/
+@media screen and (min-width: 1050px) and (max-width: 2000px) {
+    .export {
+        width: 70%;
+    }
+    .exportcontainer {
+        height: 77vh;
+    }
+} 
+
+/*standard monitor*/
+@media screen and (min-width: 1919px) and (max-width: 1921px) {
+    .export {
+        width: 50%;
+    }
+    .exportcontainer {
+        height: 60vh;
+    }
+}
+
+/*large monitor*/
+@media screen and (min-width: 2400px){
+    .export {
+        width: 40%;
+    }
+    .exportcontainer {
+        height: 50vh;
+    }
+} 

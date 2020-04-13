@@ -34,3 +34,166 @@
 .nameMain > * {
     margin: 25px;
 }
+
+/*screen sizes*/
+
+/*iphone 5*/
+@media screen and (min-width: 319px) and (max-width: 321px) {
+    .namepage {
+        width: 100%;
+        
+    }
+    .namecontainer {
+        height: 100vh;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .nameMain {
+        height: 100%;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .namedpanel {
+        height: 45%;
+    }
+    .buttonpanel {
+        display: block;
+        position: relative;
+        top: 50px;
+    }
+}
+
+/*iphone 6/7/8*/
+@media screen and (min-width: 374px) and (max-width: 376px) {
+    .namepage {
+        width: 100%;
+    }
+    .namecontainer {
+        height: 100vh;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        border-bottom: 1px solid black;
+    }
+    
+    .nameMain {
+        height: 100%;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .namedpanel {
+        height: 45%;
+    }
+    .buttonpanel {
+        display: block;
+        position: relative;
+        top: 50px;
+    }
+} 
+
+/*iphone 6/7/8 Plus*/
+@media screen and (min-width: 413px) and (max-width: 415px) {
+    .namepage {
+        width: 100%;
+    }
+    .namecontainer {
+        height: 100vh;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .nameMain {
+        height: 100%;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .namedpanel {
+        height: 45%;
+    }
+    .buttonpanel {
+        display: block;
+        position: relative;
+        top: 50px;
+    }
+    
+} 
+
+/*iphone X*/
+@media screen and (min-width: 374px) and (max-width: 376px) {
+    .namepage {
+        width: 100%;
+    }
+    .namecontainer {
+        height: 100vh;
+        border-radius: 0;
+    }
+} 
+
+/*iPad*/
+@media screen and (min-width: 767px) and (max-width: 769px) {
+    .namepage {
+        width: 95%;
+    }
+    .namecontainer {
+        height: 60vh;
+    }
+    .lgframe {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+/*iPad Pro*/
+@media screen and (min-width: 1023px) and (max-width: 1025px) {
+    .namepage {
+      width: 85%;
+    }
+    .namecontainer {
+        height: 45vh;
+    }
+  } 
+
+/*standard laptop*/
+@media screen and (min-width: 1050px) and (max-width: 2000px) {
+    .namepage {
+        width: 70%;
+    }
+    .namecontainer {
+        height: 77vh;
+    }
+} 
+
+/*standard monitor*/
+@media screen and (min-width: 1919px) and (max-width: 1921px) {
+    .namepage {
+        width: 50%;
+    }
+    .namecontainer {
+        height: 60vh;
+    }
+}
+
+/*large monitor*/
+@media screen and (min-width: 2400px){
+    .namepage {
+        width: 40%;
+    }
+    .namecontainer {
+        height: 50vh;
+    }
+} 

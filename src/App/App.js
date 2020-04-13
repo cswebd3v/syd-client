@@ -5,6 +5,7 @@ import Describepage from '../Describepage/Describepage.js';
 import Namepage from '../Namepage/Namepage.js';
 import Export from '../Export/Export.js';
 import {API_ENDPOINT} from '../config.js';
+import {Link, Switch, Route} from 'react-router-dom';
 
 
 class App extends React.Component {

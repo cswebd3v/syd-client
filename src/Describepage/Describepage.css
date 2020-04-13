@@ -23,5 +23,125 @@
     border-radius: 10px;
 }
 
-.charSheetWrapper {
+
+/*screen sizes*/
+
+/*iphone 5*/
+@media screen and (min-width: 319px) and (max-width: 321px) {
+    .describepage {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    .describecontainer {
+        height: 100vh;
+        border-radius: 0;
+    }
+    .hiddenmain {
+        display: block;
+    }
+    h1 {
+        font-size: 1.25rem;
+    }
 }
+
+/*iphone 6/7/8*/
+@media screen and (min-width: 374px) and (max-width: 376px) {
+    .describepage {
+        width: 100%;
+    }
+    .describecontainer {
+        height: 100vh;
+        border-radius: 0;
+        border-bottom: 1px solid black;
+    }
+    .hiddenmain {
+        display: block;
+    }
+} 
+
+/*iphone 6/7/8 Plus*/
+@media screen and (min-width: 413px) and (max-width: 415px) {
+    .describepage {
+        width: 100%;
+    }
+    .describecontainer {
+        height: 100vh;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .hiddenmain {
+        display: block;
+    }
+    .charSheetWrapper {
+        height: 70%;
+    }
+    .charSheet {
+        height: 90%;
+    }
+} 
+
+/*iphone X*/
+@media screen and (min-width: 374px) and (max-width: 376px) {
+    .describepage {
+        width: 100%;
+    }
+    .describecontainer {
+        height: 100vh;
+        border-radius: 0;
+    }
+} 
+
+/*iPad*/
+@media screen and (min-width: 767px) and (max-width: 769px) {
+    .describepage {
+        width: 95%;
+    }
+    .describecontainer {
+        height: 60vh;
+    }
+    .lgframe {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+/*iPad Pro*/
+@media screen and (min-width: 1023px) and (max-width: 1025px)  {
+    .describepage {
+      width: 85%;
+    }
+    .describecontainer {
+        height: 45vh;
+    }
+  } 
+
+  /*standard laptop*/
+@media screen and (min-width: 1050px) and (max-width: 2000px) {
+    .describepage {
+        width: 70%;
+    }
+    .describecontainer {
+        height: 77vh;
+    }
+} 
+
+/*standard monitor*/
+@media screen and (min-width: 1919px) and (max-width: 1921px) {
+    .describepage {
+        width: 50%;
+    }
+    .describecontainer {
+        height: 60vh;
+    }
+}
+
+/*large monitor*/
+@media screen and (min-width: 2400px){
+    .describepage {
+        width: 40%;
+    }
+    .describecontainer {
+        height: 50vh;
+    }
+} 

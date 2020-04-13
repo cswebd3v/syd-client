@@ -39,7 +39,7 @@ class Export extends React.Component {
                                         <img src={images(`./${this.props.mainFace}.png`)} alt="large face" />
                                     </div>
                                     <div className="basics">
-                                        <h3>Name: {this.props.name}</h3>
+                                        <h3>{this.props.name}</h3>
                                         <h3>Age {this.props.a3}</h3>
                                         <h3>Occupation: {this.props.occupation}</h3>
                                     </div>
@@ -66,7 +66,7 @@ class Export extends React.Component {
                             
                         </div>
                         <a href="#namepage"><button className="prev" onClick={this.props.changeStepPrev}>Previous</button></a>   
-                            <button onClick={this.downloadScreen}>Save my Darling</button> 
+                            <button className="saveButton" onClick={this.downloadScreen}>Save my Darling</button> 
                         
                     </div>
                 </div>

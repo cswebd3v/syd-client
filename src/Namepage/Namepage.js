@@ -22,7 +22,7 @@ class Namepage extends React.Component {
                 <div className="namewrapper">
                     <div className="namecontainer">
 
-                        <div className="dpanel">
+                        <div className="dpanel namedpanel">
                                 <div className="card">
                                     <div className="lgframe">
                                          <img src={images(`./${this.props.mainFace}.png`)} alt="large face" />
@@ -31,7 +31,7 @@ class Namepage extends React.Component {
                                     <h3>{this.props.occupation}</h3>
                                     <h3>Age {this.props.age}</h3>
                                 </div>
-                                <div className="buttonPanel">
+                                <div className="buttonPanel hiddenmobile">
                                     <a href="#describepage"><button className="prev" onClick={this.props.changeStepPrev}>Previous</button></a> 
                                     <a href="#export"><button className="next" onClick={this.props.changeStepNext}>Next</button></a>   
                                 </div>
@@ -48,6 +48,10 @@ class Namepage extends React.Component {
                                 <button onClick={this.props.getName}>Generate Random Name</button>
                                 <h3>Your Darling's name is: {this.props.name}</h3>
                             </div>
+                        </div>
+                        <div className="buttonPanel hiddenmain">
+                                    <a href="#describepage"><button className="prev" onClick={this.props.changeStepPrev}>Previous</button></a> 
+                                    <a href="#export"><button className="next" onClick={this.props.changeStepNext}>Next</button></a>   
                         </div>
                     </div>
                 </div>
