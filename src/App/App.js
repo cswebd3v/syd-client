@@ -5,7 +5,7 @@ import Describepage from '../Describepage/Describepage.js';
 import Namepage from '../Namepage/Namepage.js';
 import Export from '../Export/Export.js';
 import {API_ENDPOINT} from '../config.js';
-import {Link, Switch, Route} from 'react-router-dom';
+const images = require.context('../images/', true);
 
 
 class App extends React.Component {
@@ -266,6 +266,8 @@ class App extends React.Component {
           <div className="bgchoice bgc5"><button href="#" id="background5" onClick={this.changeBg}>City</button></div>
         </div>
         {wrapper}
+        <a href="/"><div id="restartButton"><img id="restartImg" alt="restart button" src={images('./restart.svg')} /></div></a>
+      
 
         <Facepage changeStepNext={this.changeStepNext} faces={this.state.faces} mainFace={this.state.mainFace} changeMainFace={this.changeMainFace} randomFace={this.randomFace} filterFaces={this.filterFaces} handleGender={this.handleGender} handleAge={this.handleAge} faceLength={this.state.faces.length} />
         <Describepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} getA1={this.getA1} getA2={this.getA2} getA3={this.getA3} getA4={this.getA4} getA5={this.getA5} getA6={this.getA6} mainFace={this.state.mainFace} />

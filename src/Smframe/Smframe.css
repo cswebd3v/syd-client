@@ -2,6 +2,9 @@
     height: 64px;
     width: 64px;
 }
+.smframe:hover {
+    cursor: pointer;
+}
 
 .smframe > img {
     height: 64px;

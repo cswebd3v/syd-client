@@ -153,6 +153,8 @@
         height: 100vh;
         border-radius: 0;
         border-bottom: 1px solid black;
+        display: flex;
+        flex-direction: column;
     }
     .lgframe {
         height: 125px;
@@ -171,7 +173,7 @@
         height: 70%;
     }
     .flexdrops {
-        height: 30%;
+        height: 27%;
         margin-bottom: 15px;
     }
     .flexdrops > h1 {

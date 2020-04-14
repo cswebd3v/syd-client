@@ -29,9 +29,9 @@ class Export extends React.Component {
         return (
             <div className="export" id="export">
                 <div className="exportwrapper">
-                    <div className="exportcontainer" id="node">
+                    <div className="exportcontainer">
                         
-                        <div className="cardLast">
+                        <div className="cardLast" id="node">
                             <h1>Save your Darling</h1>
                             <div className="cardFlex">
                                 <div className="mainInfo">

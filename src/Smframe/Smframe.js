@@ -8,7 +8,7 @@ class Smframe extends React.Component {
     render() {
         return (
             <div className="smframe">
-                    <a href='#' className="smframe" id={this.props.faceid} onClick={this.props.changeMainFace}><img src={images(`./${this.props.faceid}.png`)} alt="small face icon" /></a>
+                    <div className="smframe" id={this.props.faceid} onClick={this.props.changeMainFace}><img src={images(`./${this.props.faceid}.png`)} alt="small face icon" /></div>
             </div>
         );
     }
