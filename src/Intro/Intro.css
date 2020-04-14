@@ -3,4 +3,44 @@
     width: 60%;
     display: block;
     margin: 0 auto;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.introcontainer {
+    height: 90%;
+    width: 100%;
+    background-image: url('../images/cardbg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.introWrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.introP {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+
+#introPic {
+    height: 360px;
+    width: 640px;
+}
+
+.introcontainer > p {
+    width: 100%;
+    text-align: center;
 }

@@ -4,7 +4,9 @@ import Facepage from '../Facepage/Facepage.js';
 import Describepage from '../Describepage/Describepage.js';
 import Namepage from '../Namepage/Namepage.js';
 import Export from '../Export/Export.js';
+import Intro from '../Intro/Intro.js'
 import {API_ENDPOINT} from '../config.js';
+import {Switch, Route} from "react-router-dom";
 const images = require.context('../images/', true);
 
 
@@ -257,6 +259,12 @@ class App extends React.Component {
 
     return (
       <div className={`app ${this.state.bg}`}>
+      
+          <Switch>
+            <Route exact path="/"><App /> </Route>
+            <Route path="/landing"><Intro /> </Route>
+          </Switch>
+        
         <div id="bgchange">
           <p>Choose your Muse</p>
           <div className="bgchoice bgc1"><button href="#" id="background1" onClick={this.changeBg}>Orchard</button></div>
