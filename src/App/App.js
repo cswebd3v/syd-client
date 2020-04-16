@@ -282,23 +282,6 @@ class App extends React.Component {
             <Route path="/landing"><Intro /> </Route>
           </Switch>
           </BrowserRouter>
-        
-        {/* <div id="bgchange">
-          <p>Choose your Muse</p>
-          <div className="bgchoice bgc1"><button href="#" id="background1" onClick={this.changeBg}>Orchard</button></div>
-          <div className="bgchoice bgc2"><button href="#" id="background2" onClick={this.changeBg}>Forest</button></div>
-          <div className="bgchoice bgc3"><button href="#" id="background3" onClick={this.changeBg}>Mountains</button></div>
-          <div className="bgchoice bgc4"><button href="#" id="background4" onClick={this.changeBg}>Night Sky</button></div>
-          <div className="bgchoice bgc5"><button href="#" id="background5" onClick={this.changeBg}>City</button></div>
-        </div>
-        {wrapper}
-        <a href="/"><div id="restartButton"><img id="restartImg" alt="restart button" src={images('./restart.svg')} /></div></a>
-      
-
-        <Facepage changeStepNext={this.changeStepNext} faces={this.state.faces} mainFace={this.state.mainFace} changeMainFace={this.changeMainFace} randomFace={this.randomFace} filterFaces={this.filterFaces} handleGender={this.handleGender} handleAge={this.handleAge} faceLength={this.state.faces.length} />
-        <Describepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} getA1={this.getA1} getA2={this.getA2} getA3={this.getA3} getA4={this.getA4} getA5={this.getA5} getA6={this.getA6} mainFace={this.state.mainFace} />
-        <Namepage changeStepNext={this.changeStepNext} changeStepPrev={this.changeStepPrev} occupation={this.state.a2} age={this.state.a3} mainFace={this.state.mainFace} getName={this.getName} name={this.state.name} setName={this.setName} />
-        <Export changeStepPrev={this.changeStepPrev} mainFace={this.state.mainFace} name={this.state.name} occupation={this.state.a2}  a1={this.state.a1} a2={this.state.a2} a3={this.state.a3} a4={this.state.a4} a5={this.state.a5} a6={this.state.a6}/> */}
       </div>
     );
   }

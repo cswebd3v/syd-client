@@ -71,7 +71,7 @@ class Describepage extends React.Component {
                                     
                                 </form>
                             </div>
-                            <div className="buttonPanel hiddenmain">
+                            <div className="buttonPanel buttonPanDesc hiddenmain">
                                 <a href="#facepage"><button className="prev" onClick={this.props.changeStepPrev}>Previous</button></a> 
                                 <a href="#namepage" onClick={this.props.changeStepNext}><button className="next">Next</button></a>     
                             </div>
