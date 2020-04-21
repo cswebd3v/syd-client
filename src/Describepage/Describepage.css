@@ -36,7 +36,7 @@
     }
 } 
 /*standard monitor*/
-@media screen and (max-width: 1921px) {
+@media screen and (max-width: 2400px) {
     .describepage {
         width: 50%;
     }
@@ -45,7 +45,7 @@
     }
 }
   /*standard laptop*/
-  @media screen and (max-width: 2000px) {
+  @media screen and (max-width: 1300px) {
     .describepage {
         width: 70%;
     }
@@ -59,7 +59,7 @@
       width: 85%;
     }
     .describecontainer {
-        height: 45vh;
+        height: 60vh;
     }
   } 
 /*iPad*/

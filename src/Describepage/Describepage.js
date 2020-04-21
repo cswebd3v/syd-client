@@ -17,6 +17,9 @@ class Describepage extends React.Component {
     }
 
     render() {
+        if (images === undefined) {
+            return '';
+        }
         return (
             <div className="describepage" id="describepage">
                 <div className="describewrapper">
