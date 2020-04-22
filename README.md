@@ -1,5 +1,8 @@
 Save Your Darlings is an app created for writers and world builders, to help them create and visualize their fictional characters.
-![Preview](./src/images/intro.png)
+![Preview](./src/images/intro.jpg)
+https://syd-client.cswebd3v.now.sh/
+
+## Summary
 
 Users start by selecting a face to work with. Faces can be sorted by gender as well as age group. Depending on the selection, the user can move through multiple pages of faces.
 
@@ -9,10 +12,13 @@ Next, the user names their character. They can either supply their own name, or 
 
 Lastly, the user will save their darling. This will download an image file with all of the compiled information that was put together in the first three steps. It is recommended that the user keeps all of these images in a folder for future reference.
 
+## Technologies used
 
-## Available Scripts
+Save Your Darlings has a ReactJS front end, with a Node (express) and PostgreSQL backend.
 
-In the project directory, you can run:
+## How to use
+
+You can either visit the live site at https://syd-client.cswebd3v.now.sh/, or download the repo and run the following:
 
 ### `npm start`
 
@@ -24,7 +30,6 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tests that the components render without crashing.
 
 
