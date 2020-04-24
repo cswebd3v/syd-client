@@ -1,7 +1,8 @@
 import React from 'react';
 import './Facepage.css';
 import Smframe from '../Smframe/Smframe.js';
-const images = require.context('../images/faces', true);
+import images from '../imageStore.js';
+//const images = require.context('../images/faces', true);
 
 class Facepage extends React.Component {
     constructor(props) {
@@ -17,9 +18,7 @@ class Facepage extends React.Component {
         this.prevFacePage = this.prevFacePage.bind(this);
         
     }
-    componendDidMount() {
-        console.log(this.props)
-    }
+
 
 
     nextFacePage() {
@@ -104,6 +103,8 @@ class Facepage extends React.Component {
                     </div>
                 )
             }
+
+        const mainFace = images[this.props.mainFace - 1];
         return (
             <div className="facepage" id="facepage">
                 <div className="facewrapper">
@@ -112,7 +113,8 @@ class Facepage extends React.Component {
                         <div className="dpanel facepanel">
                             <div className="card">
                                 <div className="lgframe">
-                                    <img src={images(`./${this.props.mainFace}.png`)} alt="large face" />
+                                    {/* <img src={images(`./${this.props.mainFace}.png`)} alt="large face" /> */}
+                                    <img src={mainFace} alt="large face" />
                                 </div>
                                 <button onClick={this.props.randomFace} id="randomButton">Random Face</button>
                             </div>

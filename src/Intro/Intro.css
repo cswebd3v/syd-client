@@ -5,6 +5,7 @@
     margin: 0 auto;
     font-size: 1.25rem;
     text-align: center;
+    overflow: scroll;
 }
 
 .introcontainer {
@@ -43,4 +44,73 @@
 .introcontainer > p {
     width: 100%;
     text-align: center;
+}
+
+/*large monitor*/
+@media screen and (min-width: 2400px){
+    
+} 
+/*standard laptop*/
+@media screen and (min-width: 1279px) and (max-width: 1281px) {
+
+} 
+/*iPad Pro*/
+@media screen and (max-width: 1025px) {
+
+} 
+
+
+@media screen and (max-width: 1200px){
+    #introPic {
+        height: 216px;
+        width: 384px;
+    }
+    .introP {
+        font-size: 1.00rem;
+    }
+}
+
+/*iPad*/
+@media screen and (max-width: 765px) {
+    .introcontainer {
+        width: 100%;
+        min-height: 100%;
+    }
+    .intro {
+        width: 100%;
+        min-height: 150%;
+    }
+} 
+
+/*iphone 6/7/8 Plus*/
+@media screen and (max-width: 415px) {
+    .introcontainer {
+        width: 100%;
+        min-height: 100%;
+    }
+    .intro {
+        width: 100%;
+        min-height: 150%;
+        background-image: url('../images/cardbg.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+    #introPic {
+        height: 198px;
+        width: 352px;
+    }
+} 
+/*iphone 6/7/8*/
+@media screen and (max-width: 376px) {
+
+} 
+/*iphone X*/
+@media screen and (max-width: 376px) {
+
+} 
+/*iphone 5*/
+@media screen and (max-width: 321px) {
+
 }

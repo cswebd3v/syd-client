@@ -1,7 +1,8 @@
 import React from 'react';
 import './Export.css';
 import domtoimage from 'dom-to-image';
-const images = require.context('../images/faces', true);
+import images from '../imageStore.js';
+//const images = require.context('../images/faces', true);
 
 
 class Export extends React.Component {
@@ -12,7 +13,6 @@ class Export extends React.Component {
 
         domtoimage.toJpeg(node)
             .then(function(dataUrl) {
-                console.log(dataUrl)
 
                 const link = document.createElement('a');
                 link.download = 'darling.jpeg'
@@ -36,7 +36,7 @@ class Export extends React.Component {
                             <div className="cardFlex">
                                 <div className="mainInfo">
                                     <div className="lgframe" id="export-pic">
-                                        <img src={images(`./${this.props.mainFace}.png`)} alt="large face" />
+                                        <img src={images[this.props.mainFace - 1]} alt="large face" />
                                     </div>
                                     <div className="basics">
                                         <h3>{this.props.name}</h3>

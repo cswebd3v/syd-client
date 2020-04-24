@@ -1,6 +1,7 @@
 import React from 'react';
 import './Describepage.css';
-const images = require.context('../images/faces', true);
+import images from '../imageStore.js';
+//const images = require.context('../images/faces', true);
 
 
 class Describepage extends React.Component {
@@ -28,7 +29,7 @@ class Describepage extends React.Component {
                         <div className="dpanel">
                             <div className="card">
                                 <div className="lgframe">
-                                     <img src={images(`./${this.props.mainFace}.png`)} alt="large face"/>
+                                     <img src={images[this.props.mainFace - 1]} alt="large face"/>
                                 </div>
                             </div>
                             <div className="buttonPanel hiddenmobile">

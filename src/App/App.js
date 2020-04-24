@@ -63,7 +63,6 @@ class App extends React.Component {
     this.setState({
       bg: e.currentTarget.getAttribute('id')
     })
-    console.log(this.state.bg)
   }
 
   changeStepNext() {
@@ -83,7 +82,6 @@ class App extends React.Component {
     this.setState({
       mainFace: e.currentTarget.getAttribute('id')
     })
-    console.log(this.state.mainFace);
   }
 
   randomFace() {
@@ -140,7 +138,6 @@ class App extends React.Component {
     this.setState({
         name: event.currentTarget.childNodes[0].value
     });
-    console.log(event.currentTarget);
   }
 
   getA1(event) {
@@ -175,9 +172,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('current step: ', this.state.currentStep);
-    console.log(this.state.selectedGender, this.state.selectedAge)
-    console.log(this.state.faces.length);
     let wrapper;
     if (this.state.currentStep === 1) {
       wrapper = (

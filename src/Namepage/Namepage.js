@@ -1,6 +1,7 @@
 import React from 'react';
 import './Namepage.css';
-const images = require.context('../images/faces', true);
+import images from '../imageStore.js';
+//const images = require.context('../images/faces', true);
 
 
 class Namepage extends React.Component {
@@ -16,7 +17,6 @@ class Namepage extends React.Component {
 
 
     render() {
-        console.log(this.props.occupation)
         return (
             <div className="namepage" id="namepage">
                 <div className="namewrapper">
@@ -25,7 +25,7 @@ class Namepage extends React.Component {
                         <div className="dpanel namedpanel">
                                 <div className="card">
                                     <div className="lgframe">
-                                         <img src={images(`./${this.props.mainFace}.png`)} alt="large face" />
+                                         <img src={images[this.props.mainFace - 1]} alt="large face" />
                                     </div>
                                     <h3>{this.props.name}</h3>
                                     <h3>{this.props.occupation}</h3>
